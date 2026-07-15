@@ -1,3 +1,9 @@
+:root {
+  --gradient-color-1: #fff770;
+  --gradient-color-2: #ffd166;
+  --gradient-color-3: #ff8c94;
+  --gradient-color-4: #ff66b2;
+}
 * {
   margin: 0;
   padding: 0;
@@ -7,55 +13,161 @@
   height: 100vh;
   grid-template-rows: 20% 80% 0%;
 }
+          /* HEADER */
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  font-size: 7rem;
+  background-color: black;
+  font-family: "Honk", system-ui;
 }
 .you,
-.iwin{
+.umair {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.you {
+  padding-left: 2rem;
+}
+.youText {
   flex: 1;
 }
-.you{
-  background: linear-gradient(to right, #8C6141, #664633);
-  border-right: 3px solid white;
-}
-.iwin{
+.youScore {
+  flex: 1;        
   display: flex;
-  border-left: 3px solid white;
-  justify-content: flex-end;
-  background: linear-gradient(to right, #664633, #402B24);
+  justify-content: flex-start;
 }
+.versus{
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+.umair {
+  padding-right: 2rem;
+}
+.umairScore {
+  flex: 1;          
+  display: flex;
+  justify-content: flex-end; 
+}
+.umairText {
+  flex: 1;
+  text-align: right;
+}
+          /* MAIN */
 .main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 5px solid white;
+  font-family: "Honk", system-ui;
 }
 .rock,
 .paper,
-.scissors{
+.scissors {
   flex: 1;
   display: flex;
-  justify-content: center; /* Centers horizontally */
+  justify-content: center;
   align-items: center;
-}
-.rock{
-  background: linear-gradient(to right, #CA895F, #A15E49 );
-}
-.paper{
-  background: linear-gradient(to right, #A15E49, #4E3822);
-}
-.scissors{
-  background: linear-gradient(to right, #4E3822, #402B24);
+  background-color: black;
 }
 .footer {
-  background-color: #311D25;
+  background-color: #311d25;
 }
 .rockImage,
 .paperImage,
-.scissorsImage{
+.scissorsImage {
   display: flex;
-  height:300px;
-  rotate: 270deg;
+  height: 270px;
+  /* rotate: 270deg; */
+}
+.scissorsImage{
+  rotate: 90deg;
+  transform: scaleX(-1);
+}:root {
+  --gradient-color-1: #fff770;
+  --gradient-color-2: #ffd166;
+  --gradient-color-3: #ff8c94;
+  --gradient-color-4: #ff66b2;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 20% 80% 0%;
+}
+          /* HEADER */
+.header {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  font-size: 7rem;
+  background-color: black;
+  font-family: "Honk", system-ui;
+}
+.you,
+.umair {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.you {
+  padding-left: 2rem;
+}
+.youText {
+  flex: 1;
+}
+.youScore {
+  flex: 1;        
+  display: flex;
+  justify-content: flex-start;
+}
+.versus{
+  font-size: 4rem;
+  margin-top: 2rem;
+}
+.umair {
+  padding-right: 2rem;
+}
+.umairScore {
+  flex: 1;          
+  display: flex;
+  justify-content: flex-end; 
+}
+.umairText {
+  flex: 1;
+  text-align: right;
+}
+          /* MAIN */
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Honk", system-ui;
+}
+.rock,
+.paper,
+.scissors {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.footer {
+  background-color: #311d25;
+}
+.rockImage,
+.paperImage,
+.scissorsImage {
+  display: flex;
+  height: 270px;
+  /* rotate: 270deg; */
+}
+.scissorsImage{
+  rotate: 90deg;
+  transform: scaleX(-1);
 }
