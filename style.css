@@ -3,6 +3,8 @@
   --gradient-color-2: #ffd166;
   --gradient-color-3: #ff8c94;
   --gradient-color-4: #ff66b2;
+  --button-color-shadow: #090909;
+  --base-color: #000000;
 }
 * {
   margin: 0;
@@ -11,7 +13,7 @@
 .container {
   display: grid;
   height: 100vh;
-  background-color: black;
+  background-color: var(--base-color);
   grid-template-rows: 20% 60% 20%;
 }
 /* HEADER */
@@ -20,6 +22,7 @@
   flex-direction: row;
   font-size: 7rem;
   font-family: "Honk", system-ui;
+  cursor: default;
 }
 .you,
 .umair {
@@ -28,7 +31,7 @@
   align-items: center;
 }
 .you {
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 .youText {
   flex: 1;
@@ -39,11 +42,38 @@
   justify-content: flex-start;
 }
 .versus {
+  font-size: 2rem;
+  margin-top: 0rem;
+  text-align: center;
+}
+.against {
+  font-family: "Press Start 2P", system-ui;
+  font-size: 0.8rem;
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-color-1),
+    var(--gradient-color-4)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+}
+.name {
   font-size: 4rem;
-  margin-top: 2rem;
+  font-family: "Honk", system-ui;
+  background-color: var(--base-color);
+  border: var(--base-color);
+}
+.name:active {
+  background-color: var(--button-color-shadow);
+  cursor: pointer;
+}
+.name:hover {
+  cursor: pointer;
 }
 .umair {
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 .umairScore {
   flex: 1;
@@ -59,7 +89,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Honk", system-ui;
+  padding: 0rem 1rem;
 }
 .rock,
 .paper,
@@ -78,32 +108,49 @@
 .rockButton,
 .paperButton,
 .scissorsButton {
-  background-color: black;
-  border: black;
-  width: 100%; 
+  background-color: var(--base-color);
+  border: var(--base-color);
+  width: 100%;
   height: 100%;
 }
 
 .rockButton:active,
 .paperButton:active,
 .scissorsButton:active {
-  background-color: rgb(8, 8, 8);
+  background: linear-gradient(
+    color-mix(in srgb, var(--gradient-color-1), transparent 75%),
+    color-mix(in srgb, var(--gradient-color-2), transparent 75%),
+    color-mix(in srgb, var(--gradient-color-3), transparent 75%),
+    color-mix(in srgb, var(--gradient-color-4), transparent 75%)
+  );
+  cursor: pointer;
 }
-
+.rockButton:hover,
+.paperButton:hover,
+.scissorsButton:hover {
+  cursor: pointer;
+}
 .logContainer {
   display: flex;
   flex-direction: row;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
   font-family: "Press Start 2P", system-ui;
+  cursor: default;
 }
-.logContainer, .youLog, .umairLog {
-  background: linear-gradient(to bottom, 
-    var(--gradient-color-1), 
+.logContainer,
+.youLog,
+.umairLog {
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-color-1),
     var(--gradient-color-4)
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  line-height: 1.5; 
-  display: inline-block;
+  line-height: 1.5;
+}
+.decisionContainer {
+  text-align: center;
 }
