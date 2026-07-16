@@ -11,15 +11,14 @@
 .container {
   display: grid;
   height: 100vh;
-  grid-template-rows: 20% 80% 0%;
+  background-color: black;
+  grid-template-rows: 20% 60% 20%;
 }
-          /* HEADER */
+/* HEADER */
 .header {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   font-size: 7rem;
-  background-color: black;
   font-family: "Honk", system-ui;
 }
 .you,
@@ -35,11 +34,11 @@
   flex: 1;
 }
 .youScore {
-  flex: 1;        
+  flex: 1;
   display: flex;
   justify-content: flex-start;
 }
-.versus{
+.versus {
   font-size: 4rem;
   margin-top: 2rem;
 }
@@ -47,15 +46,15 @@
   padding-right: 2rem;
 }
 .umairScore {
-  flex: 1;          
+  flex: 1;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 }
 .umairText {
   flex: 1;
   text-align: right;
 }
-          /* MAIN */
+/* MAIN */
 .main {
   display: flex;
   flex-direction: row;
@@ -69,105 +68,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-}
-.footer {
-  background-color: #311d25;
 }
 .rockImage,
 .paperImage,
 .scissorsImage {
   display: flex;
   height: 270px;
-  /* rotate: 270deg; */
 }
-.scissorsImage{
-  rotate: 90deg;
-  transform: scaleX(-1);
-}:root {
-  --gradient-color-1: #fff770;
-  --gradient-color-2: #ffd166;
-  --gradient-color-3: #ff8c94;
-  --gradient-color-4: #ff66b2;
+.rockButton,
+.paperButton,
+.scissorsButton {
+  background-color: black;
+  border: black;
+  width: 100%; 
+  height: 100%;
 }
-* {
-  margin: 0;
-  padding: 0;
+
+.rockButton:active,
+.paperButton:active,
+.scissorsButton:active {
+  background-color: rgb(8, 8, 8);
 }
-.container {
-  display: grid;
-  height: 100vh;
-  grid-template-rows: 20% 80% 0%;
-}
-          /* HEADER */
-.header {
+
+.logContainer {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  font-size: 7rem;
-  background-color: black;
-  font-family: "Honk", system-ui;
+  padding: 0 1rem;
+  font-family: "Press Start 2P", system-ui;
 }
-.you,
-.umair {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-.you {
-  padding-left: 2rem;
-}
-.youText {
-  flex: 1;
-}
-.youScore {
-  flex: 1;        
-  display: flex;
-  justify-content: flex-start;
-}
-.versus{
-  font-size: 4rem;
-  margin-top: 2rem;
-}
-.umair {
-  padding-right: 2rem;
-}
-.umairScore {
-  flex: 1;          
-  display: flex;
-  justify-content: flex-end; 
-}
-.umairText {
-  flex: 1;
-  text-align: right;
-}
-          /* MAIN */
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: "Honk", system-ui;
-}
-.rock,
-.paper,
-.scissors {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-}
-.footer {
-  background-color: #311d25;
-}
-.rockImage,
-.paperImage,
-.scissorsImage {
-  display: flex;
-  height: 270px;
-  /* rotate: 270deg; */
-}
-.scissorsImage{
-  rotate: 90deg;
-  transform: scaleX(-1);
+.logContainer, .youLog, .umairLog {
+  background: linear-gradient(to bottom, 
+    var(--gradient-color-1), 
+    var(--gradient-color-4)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1.5; 
+  display: inline-block;
 }
