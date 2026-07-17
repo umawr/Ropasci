@@ -90,6 +90,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0rem 1rem;
+  background-color: var(--base-color);
 }
 .rock,
 .paper,
@@ -134,9 +135,19 @@
   display: flex;
   flex-direction: row;
   padding: 0.5rem 1rem;
-  justify-content: space-between;
   font-family: "Press Start 2P", system-ui;
   cursor: default;
+}
+.youLog,
+.decisionContainer,
+.umairLog {
+  flex: 1;
+}
+.youLog {
+  text-align: left;
+}
+.umairLog {
+  text-align: right;
 }
 .logContainer,
 .youLog,
@@ -153,4 +164,8 @@
 }
 .decisionContainer {
   text-align: center;
+}
+.decision{
+  height: 100%;
+  width: 100%;
 }
