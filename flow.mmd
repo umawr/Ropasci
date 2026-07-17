@@ -1,0 +1,33 @@
+---
+config:
+  layout: dagre
+  theme: dark
+  look: classic
+---
+flowchart TB
+    Start(["Game Start"]) --> PlayerChoice{"Player Chooses"}
+    PlayerChoice -- Rock --> PlayerRock["Player: Rock"]
+    PlayerChoice -- Paper --> PlayerPaper["Player: Paper"]
+    PlayerChoice -- Scissors --> PlayerScissors["Player: Scissors"]
+    PlayerRock --> GenerateAI["Generate Umair Choice"] & CompareOutcome["Compare Choices"]
+    PlayerPaper --> GenerateAI & CompareOutcome
+    PlayerScissors --> GenerateAI & CompareOutcome
+    GenerateAI --> AIChoice{"Umair Random Value"}
+    AIChoice -- 0 to 1/3 --> AIRock["Umair: Rock"]
+    AIChoice -- 1/3 to 2/3 --> AIPaper["Umair: Paper"]
+    AIChoice -- 2/3 to 1 --> AIScissors["Umair: Scissors"]
+    AIRock --> CompareOutcome
+    AIPaper --> CompareOutcome
+    AIScissors --> CompareOutcome
+    CompareOutcome --> CheckResult{"Determine Winner"}
+    CheckResult -- Same Choice --> TryAgain["Result: Try Again"]
+    CheckResult -- AI Wins --> AIWins["Result: Umair Wins<br>+1 to Umair Score"]
+    CheckResult -- Player Wins --> PlayerWins["Result: You Win<br>+1 to Player Score"]
+    TryAgain --> LogResults["Log Moves & Result"]
+    AIWins --> LogResults
+    PlayerWins --> LogResults
+    LogResults --> DisplayUI["Update Display"]
+    DisplayUI --> PlayAgain{"Continue?"}
+    PlayAgain -- Yes --> PlayerChoice
+    PlayAgain -- "No - Reset" --> ResetGame["Clear Scores<br>Reset Score and Log"]
+    ResetGame --> Start
