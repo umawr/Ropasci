@@ -4,6 +4,19 @@ let userChoice = null;
 let hasStarted = false;
 
 function youMove(choice) {
+
+  const decisionLog = document.querySelector('.decision');
+  const youMoveLog = document.querySelector('.youMove');
+  const umairMoveLog = document.querySelector('.umairMove');
+
+  if (!hasStarted) {
+    decisionLog.innerHTML = '';
+    youMoveLog.innerHTML = '';
+    umairMoveLog.innerHTML = '';
+    hasStarted = true;
+  }
+
+
   const random = Math.random();
   let umairMove;
 
@@ -49,13 +62,6 @@ function youMove(choice) {
 
   console.log(result);
 
-  const decisionLog = document.querySelector('.decision');
-
-  if (!hasStarted) {
-    decisionLog.innerHTML = '';
-    hasStarted = true;
-  }
-
   const newResult = document.createElement('p');
   newResult.textContent = `${result}`;
 
@@ -73,17 +79,16 @@ function youMove(choice) {
   } else if (result === 'Umair Wins') {
     umairScore.textContent = Number(umairScore.textContent) + 1;
   }
-
-  const resetButton = document.querySelector('.name');
-  resetButton.addEventListener('click', () => {
-    document.querySelector('.youScore').innerHTML = 0;
-    document.querySelector('.umairScore').innerHTML = 0;
-    document.querySelector('.decision').innerHTML = 'Choose an Option';
-    document.querySelector('.youMove').innerHTML = '';
-    document.querySelector('.umairMove').innerHTML = '';
-    hasStarted = false;
-  });
 }
+const resetButton = document.querySelector('.name');
+resetButton.addEventListener('click', () => {
+  document.querySelector('.youScore').innerHTML = 0;
+  document.querySelector('.umairScore').innerHTML = 0;
+  document.querySelector('.decision').innerHTML = 'Choose an Option';
+  document.querySelector('.youMove').innerHTML = 'Your Moves';
+  document.querySelector('.umairMove').innerHTML = "Umair's Moves";
+  hasStarted = false;
+});
 
 // Old Logic, pretty wet.
 
