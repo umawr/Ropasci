@@ -71,6 +71,7 @@
 }
 .name:hover {
   cursor: pointer;
+  background-color: var(--button-color-shadow);
 }
 .umair {
   padding-right: 1rem;
@@ -130,6 +131,7 @@
 .paperButton:hover,
 .scissorsButton:hover {
   cursor: pointer;
+  background-color: var(--button-color-shadow);
 }
 .logContainer {
   display: flex;
