@@ -3,8 +3,8 @@
 let userChoice = null;
 let hasStarted = false;
 
-const clickSound = new Audio('click2.1.mp3');
-const resetSound = new Audio('reset2.1.mp3'); 
+const clickSound = new Audio('sounds/click2.1.mp3');
+const resetSound = new Audio('sounds/reset2.1.mp3'); 
 
 function playSound(audio) {
   audio.currentTime = 0;
