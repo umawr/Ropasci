@@ -3,22 +3,29 @@
 let userChoice = null;
 let hasStarted = false;
 
-const clickSound = new Audio('click2.1.mp3');
-const resetSound = new Audio('reset2.1.mp3'); 
+const rockClickSound = new Audio('sounds/rockclick2.mp3');
+const paperClickSound = new Audio('sounds/paperclick2.mp3');
+const scissorsClickSound = new Audio('sounds/scissorsclick2.mp3');
+const resetSound = new Audio('sounds/reset3.1.mp3');
 
 function playSound(audio) {
   audio.currentTime = 0;
-  audio.play();
+  audio.play().catch(err => console.warn('Sound failed to play:', err));
 }
 
-
 function youMove(choice) {
-
-  playSound(clickSound);
-
   const decisionLog = document.querySelector('.decision');
   const youMoveLog = document.querySelector('.youMove');
   const umairMoveLog = document.querySelector('.umairMove');
+  
+  if (choice === 'rock') {
+    playSound(rockClickSound);
+  } else if (choice === 'paper') {
+    playSound(paperClickSound);
+  } else if (choice === 'scissors') {
+    playSound(scissorsClickSound);
+  }
+
 
   if (!hasStarted) {
     decisionLog.innerHTML = '';
@@ -70,6 +77,7 @@ function youMove(choice) {
     result = 'You Win';
   }
 
+
   console.log(result);
 
   const newResult = document.createElement('p');
@@ -101,6 +109,7 @@ resetButton.addEventListener('click', () => {
   document.querySelector('.umairMove').innerHTML = "Umair's Moves";
   hasStarted = false;
 });
+
 
 
 // Old Logic, pretty wet.
